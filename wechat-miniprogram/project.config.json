@@ -1,0 +1,14 @@
+{
+  "appid": "wx0ac6d2f324ab46e9",
+  "projectname": "shaoxiang-zhouyuyao-wedding",
+  "miniprogramRoot": "./",
+  "compileType": "miniprogram",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "enhance": true,
+    "minifyWXML": true
+  }
+}

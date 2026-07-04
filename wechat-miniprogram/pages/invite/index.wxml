@@ -1,0 +1,1 @@
+<web-view src="{{inviteUrl}}" bindload="handleLoad" binderror="handleError"></web-view>

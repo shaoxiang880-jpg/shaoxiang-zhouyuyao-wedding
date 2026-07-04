@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/invite/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "邵翔 & 周钰瑶 · 婚礼请柬",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#F7F1E8",
+    "backgroundColor": "#F7F1E8"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
