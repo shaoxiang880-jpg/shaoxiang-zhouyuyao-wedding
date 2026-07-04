@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Long+Cang&family=Noto+Serif+SC:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F8F5F0;
+  color: #2C2C2C;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gold-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A96E, transparent);
+}
+
+.gold-border {
+  border: 1px solid #C9A96E;
+}
+
+.text-shadow-soft {
+  text-shadow: 0 2px 20px rgba(201, 169, 110, 0.15);
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.ornament::before,
+.ornament::after {
+  content: "";
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A96E);
+}
+
+.ornament::after {
+  background: linear-gradient(90deg, #C9A96E, transparent);
+}
+
+.btn-gold {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 36px;
+  border: 1px solid #C9A96E;
+  color: #C9A96E;
+  background: transparent;
+  font-family: "Noto Serif SC", serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.btn-gold::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-gold:hover::before {
+  left: 100%;
+}
+
+.btn-gold:hover {
+  background: #C9A96E;
+  color: #F8F5F0;
+}
+
+.btn-gold-filled {
+  background: #C9A96E;
+  color: #F8F5F0;
+}
+
+.btn-gold-filled:hover {
+  background: #B8956D;
+}
+
+input, textarea {
+  font-family: "Noto Serif SC", serif;
+}
+
+.input-underline {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid #D4D4D4;
+  background: transparent;
+  font-size: 14px;
+  color: #2C2C2C;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-underline:focus {
+  border-bottom-color: #C9A96E;
+}
+
+.input-underline::placeholder {
+  color: #9CA3AF;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F5F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DCC5A0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A96E;
+}
