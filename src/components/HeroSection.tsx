@@ -18,7 +18,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-ivory-100">
+    <section className="relative min-h-screen flex flex-col items-center justify-end overflow-hidden bg-black">
       {!videoError && (
         <video
           autoPlay
@@ -28,119 +28,152 @@ export default function HeroSection() {
           poster=""
           onError={() => setVideoError(true)}
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ opacity: mounted ? 0.7 : 0, transition: "opacity 2s ease" }}
+          style={{ opacity: mounted ? 1 : 0, transition: "opacity 1.5s ease" }}
         >
           <source src={ASSETS.heroVideo} type="video/mp4" />
         </video>
       )}
 
-      {(videoError) && (
+      {videoError && (
         <div
           className="absolute inset-0"
           style={{
             background:
               "radial-gradient(circle at 30% 20%, #F0EBE1 0%, #F8F5F0 50%, #FDFBF7 100%)",
-            opacity: mounted ? 1 : 0,
-            transition: "opacity 1.5s ease",
           }}
         />
       )}
 
       <div
-        className="absolute inset-0 bg-ivory-100/25"
-        style={{ opacity: mounted ? 1 : 0, transition: "opacity 1.5s ease" }}
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.5) 85%, rgba(0,0,0,0.7) 100%)",
+          opacity: mounted ? 1 : 0,
+          transition: "opacity 1.5s ease",
+        }}
       />
 
-      <div className="relative z-10 text-center px-6">
-        <p
-          className="font-display text-champagne-500 text-xs sm:text-sm tracking-[0.4em] uppercase mb-12"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "translateY(0)" : "translateY(20px)",
-            transition: "all 0.8s ease 0.2s",
-          }}
-        >
-          SAVE THE DATE
-        </p>
-
-        <h1
-          className="mb-12"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "translateY(0)" : "translateY(30px)",
-            transition: "all 1s ease 0.4s",
-          }}
-        >
-          <div className="flex justify-center items-center gap-6 sm:gap-10 mb-6">
-            <span className="font-art text-charcoal-300 text-5xl sm:text-6xl md:text-7xl font-light">邵</span>
-            <span className="font-art text-charcoal-300 text-5xl sm:text-6xl md:text-7xl font-light">翔</span>
-          </div>
-
-          <div className="text-champagne-400 text-2xl sm:text-3xl font-display mb-6">
-            &amp;
-          </div>
-
-          <div className="flex justify-center items-center gap-4 sm:gap-8">
-            <span className="font-art text-charcoal-300 text-5xl sm:text-6xl md:text-7xl font-light">周</span>
-            <span className="font-art text-charcoal-300 text-5xl sm:text-6xl md:text-7xl font-light">钰</span>
-            <span className="font-art text-charcoal-300 text-5xl sm:text-6xl md:text-7xl font-light">瑶</span>
-          </div>
-        </h1>
-
-        <div
-          className="flex items-center justify-center gap-4 mb-12"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transition: "opacity 1s ease 0.8s",
-          }}
-        >
-          <div className="w-24 h-px bg-champagne-300/60" />
-          <div className="w-3 h-3 rotate-45 bg-champagne-300" />
-          <div className="w-24 h-px bg-champagne-300/60" />
-        </div>
-
-        <div
-          className="space-y-3"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "translateY(0)" : "translateY(20px)",
-            transition: "all 0.8s ease 1s",
-          }}
-        >
-          <p className="font-art text-charcoal-300 text-lg sm:text-xl tracking-wider">
-            二〇二六年九月十二日
-          </p>
-          <p className="font-display text-champagne-500 text-xs sm:text-sm tracking-[0.3em] uppercase">
-            SEPTEMBER 12, 2026
-          </p>
-          <p className="font-serif text-charcoal-200 text-xs sm:text-sm mt-4 tracking-wide">
-            农历八月初二 · 星期六
-          </p>
-        </div>
-
-        <button
-          onClick={scrollToContent}
-          className="mt-16 text-champagne-500 text-sm animate-float"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transition: "opacity 1s ease 1.5s",
-          }}
-        >
-          <p className="font-serif tracking-wider mb-3">向下滑动</p>
-          <svg
-            className="w-5 h-5 mx-auto"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+      <div className="relative z-10 w-full px-8 pb-24 sm:pb-32 md:pb-40">
+        <div className="text-center">
+          <p
+            className="text-champagne-100 text-base sm:text-lg font-light mb-3"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "translateY(0)" : "translateY(15px)",
+              transition: "all 0.8s ease 0.3s",
+              fontFamily: '"Long Cang", "Ma Shan Zheng", cursive, serif',
+              letterSpacing: "0.15em",
+            }}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
-        </button>
+            2026.09.12
+          </p>
+
+          <h1
+            className="text-white text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light mb-2"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "translateY(0)" : "translateY(20px)",
+              transition: "all 1s ease 0.5s",
+              fontFamily: '"Long Cang", "Ma Shan Zheng", cursive, serif',
+              textShadow: "0 2px 20px rgba(0,0,0,0.4)",
+              lineHeight: 1.1,
+              letterSpacing: "0.05em",
+            }}
+          >
+            我们的婚礼
+          </h1>
+
+          <div
+            className="relative w-full max-w-[280px] sm:max-w-[340px] mx-auto mb-2"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transition: "opacity 1s ease 0.7s",
+              height: "24px",
+            }}
+          >
+            <svg
+              viewBox="0 0 400 40"
+              className="w-full h-full"
+              style={{ overflow: "visible" }}
+            >
+              <path
+                d="M0,20 Q100,0 200,20 T400,20"
+                fill="none"
+                stroke="#C9A96E"
+                strokeWidth="1.5"
+                opacity="0.7"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
+
+          <p
+            className="text-champagne-100 text-lg sm:text-xl font-light -mt-1"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "translateY(0)" : "translateY(15px)",
+              transition: "all 0.8s ease 0.8s",
+              fontFamily: '"Long Cang", "Ma Shan Zheng", cursive, serif',
+              letterSpacing: "0.1em",
+            }}
+          >
+            our wedding
+          </p>
+
+          <div
+            className="flex items-center justify-center gap-3 sm:gap-5 mt-6"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "translateY(0)" : "translateY(15px)",
+              transition: "all 0.8s ease 1s",
+            }}
+          >
+            <span
+              className="text-white text-lg sm:text-xl font-light"
+              style={{
+                fontFamily: '"Ma Shan Zheng", "Noto Serif SC", serif',
+              }}
+            >
+              邵翔
+            </span>
+            <span className="text-red-400 text-xl sm:text-2xl font-bold" style={{ fontFamily: '"Ma Shan Zheng", serif' }}>
+              囍
+            </span>
+            <span
+              className="text-white text-lg sm:text-xl font-light"
+              style={{
+                fontFamily: '"Ma Shan Zheng", "Noto Serif SC", serif',
+              }}
+            >
+              周钰瑶
+            </span>
+          </div>
+
+          <button
+            onClick={scrollToContent}
+            className="mt-12 text-white/70 text-xs animate-float"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transition: "opacity 1s ease 1.3s",
+            }}
+          >
+            <p className="tracking-widest mb-2">向上滑动</p>
+            <svg
+              className="w-4 h-4 mx-auto"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="M5 15l7-7 7 7"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
   );
