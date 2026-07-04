@@ -1,109 +1,147 @@
-import { useState, useEffect, useCallback } from "react";
 import Reveal from "./Reveal";
-import SmartImage from "./SmartImage";
 import { ASSETS } from "@/config/assets";
 
 export default function StorySection() {
   const photos = ASSETS.storyPhotos;
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % photos.length);
-  }, [photos.length]);
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + photos.length) % photos.length);
-  };
-
-  useEffect(() => {
-    const timer = setInterval(nextSlide, 4500);
-    return () => clearInterval(timer);
-  }, [nextSlide]);
 
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-ivory-50 to-ivory-100">
-      <div className="max-w-2xl mx-auto">
-        <Reveal>
-          <p className="font-display text-champagne-500 text-sm tracking-[0.3em] uppercase text-center mb-4">
-            Our Story
+    <section className="py-16 sm:py-20 bg-cream overflow-hidden">
+      {/* 宽幅照片 1 */}
+      <Reveal>
+        <div className="px-5 sm:px-8 mb-6">
+          <img
+            src={photos[0]}
+            alt="故事 1"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+      </Reveal>
+
+      <Reveal delay={150}>
+        <div className="text-center px-8 py-10">
+          <p className="font-serif text-charcoal-300 text-base sm:text-lg leading-[2.2] tracking-wide">
+            故事的开始
+            <br />
+            往往始于一场不期而遇的心动
           </p>
-        </Reveal>
-
-        <Reveal delay={150}>
-          <h3 className="font-art text-charcoal-300 text-2xl sm:text-3xl font-light tracking-wider text-center mb-3">
-            爱情故事
-          </h3>
-        </Reveal>
-
-        <Reveal delay={250}>
-          <div className="font-serif text-charcoal-100 text-sm text-center mb-12 leading-loose">
-            <p className="mb-3">每一张照片，都是时光替我们留下的信。</p>
-            <p>从初见的心动，到后来的笃定，</p>
-            <p>我们慢慢懂得，爱不是一瞬的热烈，</p>
-            <p>而是四季更迭里，仍愿与彼此同路。</p>
-          </div>
-        </Reveal>
-
-        {/* ③ 照片轮播 - 全宽完整展示 */}
-        <Reveal delay={350}>
-          <div className="relative -mx-6 sm:-mx-12">
-            <div className="relative w-full">
-              <SmartImage
-                key={currentIndex}
-                src={photos[currentIndex]}
-                alt={`爱情故事 ${currentIndex + 1}`}
-                placeholder={`故事 ${currentIndex + 1}`}
-                className="w-full h-auto"
-                placeholderClassName="w-full aspect-[3/4]"
-              />
-            </div>
-
-            {/* 左右切换按钮 */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ivory-100/80 backdrop-blur-sm border border-champagne-200/40 flex items-center justify-center text-champagne-500 hover:bg-champagne-300/20 transition-all"
-              aria-label="上一张"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-ivory-100/80 backdrop-blur-sm border border-champagne-200/40 flex items-center justify-center text-champagne-500 hover:bg-champagne-300/20 transition-all"
-              aria-label="下一张"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-        </Reveal>
-
-        {/* 指示器 */}
-        <Reveal delay={500}>
-          <div className="flex justify-center gap-2 mt-8">
-            {photos.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`h-1 transition-all duration-300 ${
-                  index === currentIndex
-                    ? "w-8 bg-champagne-400"
-                    : "w-2 bg-champagne-200/50"
-                }`}
-                aria-label={`第 ${index + 1} 张`}
-              />
-            ))}
-          </div>
-        </Reveal>
-
-        <Reveal delay={650}>
-          <p className="font-serif text-charcoal-100 text-xs text-center mt-6 italic">
-            {currentIndex + 1} / {photos.length}
+          <p
+            className="mt-4 text-[11px] sm:text-xs leading-[1.9] tracking-wide"
+            style={{ fontFamily: '"Cormorant Garamond", serif', color: "#6B5E54" }}
+          >
+            The beginning of a story
+            <br />
+            often begins with an unexpected heartbeat
           </p>
-        </Reveal>
-      </div>
+        </div>
+      </Reveal>
+
+      {/* 双列网格 */}
+      <Reveal delay={250}>
+        <div className="grid grid-cols-2 gap-2 px-5 sm:px-8 mb-6">
+          <img
+            src={photos[1]}
+            alt="故事 2"
+            className="w-full aspect-[3/4] object-cover"
+          />
+          <img
+            src={photos[2]}
+            alt="故事 3"
+            className="w-full aspect-[3/4] object-cover"
+          />
+        </div>
+      </Reveal>
+
+      <Reveal delay={350}>
+        <div className="text-center px-8 py-10">
+          <p className="font-serif text-charcoal-300 text-base sm:text-lg leading-[2.2] tracking-wide">
+            余生的漫漫
+            <br />
+            皆为此后三餐四季温柔的相逢
+          </p>
+          <p
+            className="mt-4 text-[11px] sm:text-xs leading-[1.9] tracking-wide"
+            style={{ fontFamily: '"Cormorant Garamond", serif', color: "#6B5E54" }}
+          >
+            My remaining long years
+            <br />
+            all for gentle seasons' encounters
+          </p>
+        </div>
+      </Reveal>
+
+      {/* 四宫格 */}
+      <Reveal delay={450}>
+        <div className="grid grid-cols-2 gap-1.5 px-5 sm:px-8 mb-6">
+          <img
+            src={photos[3]}
+            alt="故事 4"
+            className="w-full aspect-[3/4] object-cover"
+          />
+          <img
+            src={photos[4]}
+            alt="故事 5"
+            className="w-full aspect-[3/4] object-cover"
+          />
+          <img
+            src={photos[5]}
+            alt="故事 6"
+            className="w-full aspect-[3/4] object-cover"
+          />
+          <img
+            src={photos[6]}
+            alt="故事 7"
+            className="w-full aspect-[3/4] object-cover"
+          />
+        </div>
+      </Reveal>
+
+      <Reveal delay={550}>
+        <div className="text-center px-8 py-8">
+          <p
+            className="text-sm sm:text-base leading-[2] tracking-wide"
+            style={{ fontFamily: '"Cormorant Garamond", serif', color: "#6B5E54" }}
+          >
+            Love is not just a feeling,
+            <br />
+            but a promise we choose to keep
+            <br />
+            every single day.
+          </p>
+        </div>
+      </Reveal>
+
+      {/* 宽幅照片 2 */}
+      <Reveal delay={650}>
+        <div className="px-5 sm:px-8 mb-6">
+          <img
+            src={photos[7]}
+            alt="故事 8"
+            className="w-full aspect-[16/9] object-cover"
+          />
+        </div>
+      </Reveal>
+
+      {/* 宝丽来照片 */}
+      <Reveal delay={750}>
+        <div className="flex justify-center px-6 py-6">
+          <div
+            className="bg-white p-2 pb-8 shadow-md"
+            style={{ transform: "rotate(-2deg)", maxWidth: "260px" }}
+          >
+            <img
+              src="/assets/images/story/story-0-polaroid.jpg"
+              alt="Polaroid"
+              className="w-full h-auto object-contain"
+            />
+            <p
+              className="text-center text-[11px] mt-3 tracking-wider"
+              style={{ fontFamily: '"Cormorant Garamond", serif', color: "#6B5E54" }}
+            >
+              S & Z
+            </p>
+          </div>
+        </div>
+      </Reveal>
     </section>
   );
 }

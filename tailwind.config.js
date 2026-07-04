@@ -14,6 +14,16 @@ export default {
           100: "#F8F5F0",
           200: "#F0EBE1",
         },
+        cream: {
+          DEFAULT: "#F5F0E6",
+          light: "#FAF7F1",
+          dark: "#E8E0D2",
+        },
+        wine: {
+          DEFAULT: "#722F37",
+          light: "#8B3A3A",
+          dark: "#5A252C",
+        },
         champagne: {
           50: "#F5ECD9",
           100: "#E8D9B8",
@@ -40,8 +50,8 @@ export default {
           "serif",
         ],
         display: [
+          '"Playfair Display"',
           '"Ma Shan Zheng"',
-          '"Long Cang"',
           '"Noto Serif SC"',
           "Georgia",
           "serif",
@@ -50,6 +60,12 @@ export default {
           '"Ma Shan Zheng"',
           '"Long Cang"',
           "serif",
+        ],
+        sans: [
+          '"Inter"',
+          '"Helvetica Neue"',
+          "Arial",
+          "sans-serif",
         ],
       },
       animation: {

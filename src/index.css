@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Long+Cang&family=Noto+Serif+SC:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=Ma+Shan+Zheng&family=Long+Cang&family=Noto+Serif+SC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,7 +11,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #F8F5F0;
+  background-color: #F5F0E6;
   color: #2C2C2C;
   font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif;
   -webkit-font-smoothing: antialiased;
@@ -141,19 +141,62 @@ select {
   -webkit-appearance: none;
 }
 
+/* 画报风格通用样式 */
+.section-title {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.section-title .script {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 15px;
+  color: #A85D50;
+  letter-spacing: 0.02em;
+}
+
+.section-title .cn {
+  display: block;
+  font-family: "Noto Serif SC", serif;
+  font-size: 12px;
+  color: #6B5E54;
+  letter-spacing: 0.25em;
+  margin-top: 4px;
+}
+
+.en-sub {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  font-size: 12px;
+  color: #6B5E54;
+  letter-spacing: 0.04em;
+}
+
+.divider-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, rgba(107, 94, 84, 0.3), transparent);
+  margin: 0 auto;
+}
+
+.paper-card {
+  background: #FBF7F0;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(42, 35, 32, 0.05);
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F8F5F0;
+  background: #F5F0E6;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #DCC5A0;
+  background: #D6CFC5;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #C9A96E;
+  background: #A85D50;
 }
