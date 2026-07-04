@@ -1,3 +1,38 @@
+<view wx:if="{{showOpening}}" class="opening-layer {{openingLeaving ? 'is-leaving' : ''}}">
+  <image
+    wx:if="{{showOpeningEndPoster}}"
+    class="opening-end-poster"
+    src="{{openingEndPoster}}"
+    mode="aspectFill"
+  />
+
+  <image
+    wx:else
+    class="opening-poster"
+    src="{{openingPoster}}"
+    mode="aspectFill"
+  />
+
+  <video
+    wx:if="{{!showOpeningEndPoster}}"
+    id="openingVideo"
+    class="opening-video"
+    src="{{openingVideo}}"
+    poster="{{openingPoster}}"
+    autoplay="{{true}}"
+    muted="{{true}}"
+    controls="{{false}}"
+    loop="{{false}}"
+    object-fit="cover"
+    show-center-play-btn="{{false}}"
+    enable-progress-gesture="{{false}}"
+    bindended="onOpeningEnded"
+    binderror="onOpeningError"
+  ></video>
+
+  <cover-view class="opening-skip" bindtap="skipOpening">跳过</cover-view>
+</view>
+
 <scroll-view class="page" scroll-y enhanced show-scrollbar="{{false}}">
   <view class="music-mark">♪</view>
 

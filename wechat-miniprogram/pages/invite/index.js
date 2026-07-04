@@ -2,6 +2,12 @@ const shareTitle = "邵翔 & 周钰瑶 · 婚礼请柬";
 
 Page({
   data: {
+    showOpening: true,
+    openingLeaving: false,
+    showOpeningEndPoster: false,
+    openingVideo: "/assets/opening/invitation-opening.mp4",
+    openingPoster: "/assets/opening/invitation-opening-poster.jpg",
+    openingEndPoster: "/assets/opening/invitation-opening-end.jpg",
     heroPreview: "/assets/h5/couple-main-preview.jpg",
     heroImage: "/assets/h5/couple-main.jpg",
     envelopePhoto: "/assets/h5/envelope-photo.jpg",
@@ -28,6 +34,65 @@ Page({
       { title: "婚礼仪式", en: "Wedding ceremony", time: "AM 11:08" },
       { title: "婚礼午宴", en: "Wedding luncheon", time: "PM 12:08" },
     ],
+  },
+
+  onReady() {
+    this.openingFallbackTimer = setTimeout(() => {
+      this.hideOpening(false);
+    }, 8000);
+  },
+
+  onUnload() {
+    if (this.openingFallbackTimer) {
+      clearTimeout(this.openingFallbackTimer);
+      this.openingFallbackTimer = null;
+    }
+    if (this.openingHoldTimer) {
+      clearTimeout(this.openingHoldTimer);
+      this.openingHoldTimer = null;
+    }
+    if (this.openingLeaveTimer) {
+      clearTimeout(this.openingLeaveTimer);
+      this.openingLeaveTimer = null;
+    }
+  },
+
+  onOpeningEnded() {
+    this.hideOpening(true);
+  },
+
+  onOpeningError() {
+    this.hideOpening(false);
+  },
+
+  skipOpening() {
+    this.hideOpening(true);
+  },
+
+  hideOpening(useEndPoster = true) {
+    if (!this.data.showOpening || this.data.openingLeaving) return;
+
+    if (this.openingFallbackTimer) {
+      clearTimeout(this.openingFallbackTimer);
+      this.openingFallbackTimer = null;
+    }
+
+    if (useEndPoster) {
+      this.setData({ showOpeningEndPoster: true });
+    }
+
+    this.openingHoldTimer = setTimeout(() => {
+      this.setData({ openingLeaving: true });
+
+      this.openingLeaveTimer = setTimeout(() => {
+        this.setData({
+          showOpening: false,
+          openingLeaving: false,
+          showOpeningEndPoster: false,
+        });
+        this.openingLeaveTimer = null;
+      }, 560);
+    }, useEndPoster ? 300 : 0);
   },
 
   openLocation() {
