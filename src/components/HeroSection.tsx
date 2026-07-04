@@ -30,15 +30,27 @@ export default function HeroSection() {
         <div
           className="relative w-full max-h-[70vh] overflow-hidden"
           style={{
-            opacity: imageLoaded ? 1 : 0,
             transform: mounted ? "scale(1)" : "scale(1.04)",
-            transition: "opacity 1.4s ease 0.4s, transform 1.6s ease 0.4s",
+            transition: "transform 1.6s ease 0.2s",
           }}
         >
           <img
+            src={ASSETS.coupleMainPreview}
+            alt=""
+            className="w-full h-auto object-contain"
+            loading="eager"
+            decoding="sync"
+            fetchPriority="high"
+            aria-hidden="true"
+          />
+          <img
             src={ASSETS.coupleMain}
             alt="邵翔与周钰瑶"
-            className="w-full h-full object-contain"
+            className="absolute inset-0 w-full h-full object-contain"
+            style={{
+              opacity: imageLoaded ? 1 : 0,
+              transition: "opacity 0.45s ease",
+            }}
             loading="eager"
             decoding="async"
             fetchPriority="high"

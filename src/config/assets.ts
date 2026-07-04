@@ -4,6 +4,7 @@ export const withBaseAsset = (path: string) =>
 export const ASSETS = {
   // 1. 开场封面 - 主婚纱照（画报风格大图）
   coupleMain: withBaseAsset("assets/images/couple-main.jpg"),
+  coupleMainPreview: withBaseAsset("assets/images/couple-main-preview.jpg"),
 
   // 2. 信封区域照片
   envelopePhoto: withBaseAsset("assets/images/envelope-photo.jpg"),
