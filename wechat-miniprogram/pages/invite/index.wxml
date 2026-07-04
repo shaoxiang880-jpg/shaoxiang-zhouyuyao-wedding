@@ -1,96 +1,139 @@
 <scroll-view class="page" scroll-y enhanced show-scrollbar="{{false}}">
-  <view class="audio-mark">♪</view>
+  <view class="music-mark">♪</view>
 
-  <view class="cover-block">
-    <text class="eyebrow">WEDDING INVITATION</text>
-    <image
-      class="magazine-page first-page"
-      src="{{magazinePages[0]}}"
-      mode="widthFix"
-      show-menu-by-longpress="true"
-    />
-    <view class="name-row">
-      <view class="name-item">
+  <view class="hero section">
+    <text class="hero-title">WEDDING INVITATION</text>
+    <view class="hero-photo-wrap">
+      <image class="hero-preview" src="{{heroPreview}}" mode="widthFix" />
+      <image class="hero-photo" src="{{heroImage}}" mode="widthFix" show-menu-by-longpress="true" />
+    </view>
+    <view class="hero-names">
+      <view class="name-block">
         <text class="role">新郎</text>
         <text class="cn-name">邵翔</text>
         <text class="en-name">SHAOXIANG</text>
+        <text class="script-name">Groom</text>
       </view>
-      <text class="and">&amp;</text>
-      <view class="name-item">
+      <text class="amp">&amp;</text>
+      <view class="name-block">
         <text class="role">新娘</text>
         <text class="cn-name">周钰瑶</text>
         <text class="en-name">ZHOUYUYAO</text>
+        <text class="script-name">Bride</text>
       </view>
     </view>
-    <view class="date-line">
-      <text>2026</text>
-      <text>/</text>
-      <text>09</text>
-      <text>/</text>
+    <view class="date-stack">
       <text>12</text>
+      <text class="date-slash">/</text>
+      <text>09</text>
     </view>
   </view>
 
-  <view class="invite-copy">
-    <text>诚挚地邀请您参加</text>
-    <text class="copy-strong">我们的婚礼</text>
-    <text>期待与您相见，在我们最重要的一天</text>
-    <text class="slash">/</text>
-    <text class="copy-en">Sincerely invite you to participate</text>
-    <text class="copy-en">Our wedding</text>
-    <text class="copy-en">Looking forward to meeting you on our most important day</text>
+  <view class="invite section">
+    <view class="copy-cn">
+      <text>诚挚地邀请您参加</text>
+      <text class="copy-main">我们的婚礼</text>
+      <text>期待与您相见，在我们最重要的一天</text>
+    </view>
+    <text class="decor-slash">/</text>
+    <view class="copy-en">
+      <text>Sincerely invite you to participate</text>
+      <text>Our wedding</text>
+      <text>Looking forward to meeting you on</text>
+      <text>our most important day</text>
+    </view>
+    <view class="thin-line"></view>
   </view>
 
-  <block wx:for="{{magazinePages}}" wx:key="*this">
-    <image
-      wx:if="{{index > 0}}"
-      class="magazine-page"
-      src="{{item}}"
-      mode="widthFix"
-      lazy-load="{{index > 1}}"
-      show-menu-by-longpress="true"
-    />
-  </block>
+  <view class="envelope section">
+    <view class="envelope-card">
+      <view class="flap"></view>
+      <image class="envelope-image" src="{{envelopePhoto}}" mode="aspectFill" lazy-load="true" show-menu-by-longpress="true" />
+      <view class="envelope-text">
+        <text class="love">Love</text>
+        <text class="label">INVITATION</text>
+        <text class="sub">A letter addressed to love</text>
+      </view>
+    </view>
+  </view>
 
-  <view class="info-panel">
+  <view class="info section">
     <view class="section-title">
       <text class="script">Wedding date</text>
-      <text class="section-cn">婚礼信息</text>
+      <text class="cn-title">婚礼日期</text>
     </view>
     <view class="date-card">
       <view class="date-side">
         <text>SEP</text>
         <text>2026</text>
       </view>
-      <view class="date-main">
+      <view class="date-mid">
         <text class="date-number">09.12</text>
-        <text class="date-sub">SATURDAY</text>
+        <text class="date-en">SEP 12, 2026</text>
       </view>
       <view class="date-side">
+        <text>SAT</text>
         <text>星期六</text>
-        <text>午宴</text>
       </view>
     </view>
     <view class="venue">
       <text class="venue-name">天港禧悦 · 宴会中心</text>
       <text class="venue-sub">海曙丽园南路店</text>
       <text class="venue-address">浙江省宁波市海曙区丽园南路</text>
-      <button class="nav-button" bindtap="openLocation">一键导航</button>
+      <button class="map-button" bindtap="openLocation">一键导航</button>
     </view>
   </view>
 
-  <view class="timeline">
-    <view class="timeline-item" wx:for="{{timeline}}" wx:key="title">
-      <text class="timeline-title">{{item.title}}</text>
-      <text class="timeline-heart">♡</text>
-      <text class="timeline-time">{{item.time}}</text>
+  <view class="timeline section">
+    <view class="section-title">
+      <text class="script">Wedding Process</text>
+      <text class="cn-title">婚礼流程</text>
+    </view>
+    <view class="timeline-row">
+      <view class="timeline-item" wx:for="{{timeline}}" wx:key="title">
+        <text class="timeline-title">{{item.title}}</text>
+        <text class="timeline-en">{{item.en}}</text>
+        <text class="timeline-icon">♡</text>
+        <text class="timeline-time">{{item.time}}</text>
+      </view>
     </view>
   </view>
 
-  <view class="footer">
-    <text class="footer-cn">邀请最挚爱的您来一场关于爱的旅行</text>
-    <text class="footer-cn">见证我们 爱的启程</text>
-    <text class="footer-sign">Shao Xiang & Zhou Yu Yao</text>
+  <view class="story section">
+    <image class="wide-photo" src="{{storyPhotos[0]}}" mode="widthFix" lazy-load="true" show-menu-by-longpress="true" />
+    <view class="story-copy">
+      <text>故事的开始</text>
+      <text>往往始于一场不期而遇的心动</text>
+      <text class="story-en">The beginning of a story begins with an unexpected heartbeat</text>
+    </view>
+    <view class="grid">
+      <image class="grid-img" wx:for="{{gridPhotos}}" wx:key="*this" src="{{item}}" mode="aspectFill" lazy-load="true" show-menu-by-longpress="true" />
+    </view>
+    <view class="story-copy">
+      <text>余生的漫漫</text>
+      <text>皆为此后三餐四季温柔的相逢</text>
+    </view>
+    <image class="wide-photo" src="{{storyPhotos[7]}}" mode="aspectFill" lazy-load="true" show-menu-by-longpress="true" />
+    <view class="polaroid">
+      <image class="polaroid-img" src="{{polaroidPhoto}}" mode="widthFix" lazy-load="true" show-menu-by-longpress="true" />
+      <text>S & Z</text>
+    </view>
+  </view>
+
+  <view class="closing section">
+    <view class="closing-grid">
+      <image class="closing-photo" src="{{closingPhoto}}" mode="widthFix" lazy-load="true" show-menu-by-longpress="true" />
+      <view class="heart-note">
+        <text>This is not a day for asking questions,</text>
+        <text>but a day for giving thanks.</text>
+      </view>
+    </view>
+    <view class="closing-copy">
+      <text>邀请最挚爱的您来一场关于爱的旅行</text>
+      <text>见证我们 爱的启程</text>
+      <text class="closing-en">Thank you my friend for traveling afar to witness the moment of our lifetime.</text>
+      <text class="signature">Shao Xiang & Zhou Yu Yao</text>
+    </view>
     <button class="share-button" open-type="share">分享请柬</button>
   </view>
 </scroll-view>
