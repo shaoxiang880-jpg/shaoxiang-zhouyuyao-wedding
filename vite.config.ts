@@ -9,13 +9,7 @@ export default defineConfig({
     sourcemap: false,
   },
   plugins: [
-    react({
-      babel: {
-        plugins: [
-          'react-dev-locator',
-        ],
-      },
-    }),
+    react(),
     tsconfigPaths()
   ],
 })

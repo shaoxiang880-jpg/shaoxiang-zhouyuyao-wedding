@@ -4,6 +4,9 @@ export const withBaseAsset = (path: string) =>
 export const ASSETS = {
   // 1. 开场封面 - 全屏背景视频（循环播放，15-30秒）
   heroVideo: withBaseAsset("assets/video/hero-bg.mp4"),
+  heroPoster: withBaseAsset("assets/images/hero-poster.jpg"),
+  // 1.1 开场标题叠加图（透明PNG，盖在视频上）
+  heroTitleOverlay: withBaseAsset("assets/images/wedding-title-overlay-transparent-final.png"),
 
   // 2. 诚挚邀请 - 新人主合照（竖版最佳）
   coupleMain: withBaseAsset("assets/images/couple-main.jpg"),
