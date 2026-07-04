@@ -19,6 +19,7 @@ export const ASSETS = {
     withBaseAsset("assets/images/story/story-7.jpg"),
     withBaseAsset("assets/images/story/story-8.jpg"),
   ],
+  storyPolaroid: withBaseAsset("assets/images/story/story-0-polaroid.jpg"),
 
   // 4. 结尾照片
   closingPhoto: withBaseAsset("assets/images/closing-photo.jpg"),

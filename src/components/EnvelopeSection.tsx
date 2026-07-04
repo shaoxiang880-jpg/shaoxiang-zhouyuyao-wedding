@@ -48,6 +48,8 @@ export default function EnvelopeSection() {
                     src={ASSETS.envelopePhoto}
                     alt="爱情故事"
                     className="w-full aspect-[4/5] object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>

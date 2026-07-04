@@ -13,6 +13,8 @@ export default function StorySection() {
             src={photos[0]}
             alt="故事 1"
             className="w-full h-auto object-contain"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </Reveal>
@@ -42,11 +44,15 @@ export default function StorySection() {
             src={photos[1]}
             alt="故事 2"
             className="w-full aspect-[3/4] object-cover"
+            loading="lazy"
+            decoding="async"
           />
           <img
             src={photos[2]}
             alt="故事 3"
             className="w-full aspect-[3/4] object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </Reveal>
@@ -76,21 +82,29 @@ export default function StorySection() {
             src={photos[3]}
             alt="故事 4"
             className="w-full aspect-[3/4] object-cover"
+            loading="lazy"
+            decoding="async"
           />
           <img
             src={photos[4]}
             alt="故事 5"
             className="w-full aspect-[3/4] object-cover"
+            loading="lazy"
+            decoding="async"
           />
           <img
             src={photos[5]}
             alt="故事 6"
             className="w-full aspect-[3/4] object-cover"
+            loading="lazy"
+            decoding="async"
           />
           <img
             src={photos[6]}
             alt="故事 7"
             className="w-full aspect-[3/4] object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </Reveal>
@@ -117,6 +131,8 @@ export default function StorySection() {
             src={photos[7]}
             alt="故事 8"
             className="w-full aspect-[16/9] object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </Reveal>
@@ -129,9 +145,11 @@ export default function StorySection() {
             style={{ transform: "rotate(-2deg)", maxWidth: "260px" }}
           >
             <img
-              src="/assets/images/story/story-0-polaroid.jpg"
+              src={ASSETS.storyPolaroid}
               alt="Polaroid"
               className="w-full h-auto object-contain"
+              loading="lazy"
+              decoding="async"
             />
             <p
               className="text-center text-[11px] mt-3 tracking-wider"

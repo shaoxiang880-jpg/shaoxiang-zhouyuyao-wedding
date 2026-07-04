@@ -39,6 +39,9 @@ export default function HeroSection() {
             src={ASSETS.coupleMain}
             alt="邵翔与周钰瑶"
             className="w-full h-full object-contain"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
             onLoad={() => setImageLoaded(true)}
           />
         </div>

@@ -30,6 +30,8 @@ export default function FooterSection() {
                 src={ASSETS.closingPhoto}
                 alt="爱的启程"
                 className="w-full h-auto object-contain"
+                loading="lazy"
+                decoding="async"
               />
               <div
                 className="paper-card p-5 flex items-center justify-center"
