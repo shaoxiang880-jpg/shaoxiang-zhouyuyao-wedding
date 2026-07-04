@@ -1,1 +1,89 @@
-<web-view src="{{inviteUrl}}" bindload="handleLoad" binderror="handleError"></web-view>
+<scroll-view class="page" scroll-y enhanced show-scrollbar="{{false}}">
+  <view class="hero">
+    <view class="hero-kicker">WEDDING INVITATION</view>
+    <image class="hero-image" src="{{heroImage}}" mode="widthFix" show-menu-by-longpress="true" />
+    <view class="names">
+      <view class="person">
+        <text class="role">新郎</text>
+        <text class="name">邵翔</text>
+        <text class="roman">SHAOXIANG</text>
+        <text class="tag">Groom</text>
+      </view>
+      <view class="amp">&amp;</view>
+      <view class="person">
+        <text class="role">新娘</text>
+        <text class="name">周钰瑶</text>
+        <text class="roman">ZHOUYUYAO</text>
+        <text class="tag">Bride</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section date-section">
+    <view class="section-title">
+      <text class="script">Wedding date</text>
+      <text class="cn">婚礼日期</text>
+    </view>
+    <view class="date-card">
+      <view class="date-side">
+        <text>SEP</text>
+        <text>2026</text>
+      </view>
+      <view class="date-main">
+        <text class="date-number">09.12</text>
+        <text class="date-en">SEP 12, 2026</text>
+      </view>
+      <view class="date-side">
+        <text>SAT</text>
+        <text>星期六</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section venue-section">
+    <view class="section-title">
+      <text class="script">Venue</text>
+      <text class="cn">婚礼地点</text>
+    </view>
+    <view class="venue-card">
+      <text class="venue-name">天港禧悦 · 宴会中心</text>
+      <text class="venue-sub">海曙丽园南路店</text>
+      <text class="venue-address">浙江省宁波市海曙区丽园南路</text>
+      <button class="map-button" bindtap="openLocation">一键导航</button>
+    </view>
+  </view>
+
+  <view class="photo-block">
+    <image class="wide-photo" src="{{storyImage}}" mode="widthFix" lazy-load="true" show-menu-by-longpress="true" />
+  </view>
+
+  <view class="quote">
+    <text>故事的开始，往往始于一场不期而遇的心动。</text>
+    <text class="quote-en">The beginning of a story begins with an unexpected heartbeat.</text>
+  </view>
+
+  <view class="section">
+    <view class="section-title">
+      <text class="script">Wedding Process</text>
+      <text class="cn">婚礼流程</text>
+    </view>
+    <view class="timeline">
+      <view class="timeline-item" wx:for="{{timeline}}" wx:key="title">
+        <text class="timeline-title">{{item.title}}</text>
+        <text class="timeline-en">{{item.en}}</text>
+        <text class="timeline-dot">♡</text>
+        <text class="timeline-time">{{item.time}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="photo-block closing">
+    <image class="wide-photo" src="{{closingImage}}" mode="widthFix" lazy-load="true" show-menu-by-longpress="true" />
+  </view>
+
+  <view class="footer">
+    <text class="footer-title">诚邀您见证我们的婚礼</text>
+    <text class="footer-desc">2026 年 9 月 12 日，宁波</text>
+    <button class="share-button" open-type="share">分享请柬</button>
+  </view>
+</scroll-view>

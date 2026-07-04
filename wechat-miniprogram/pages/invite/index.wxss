@@ -1,3 +1,287 @@
 page {
   background: #f7f1e8;
+  color: #2c2c2c;
+}
+
+.page {
+  height: 100vh;
+  background: #f7f1e8;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 64rpx 40rpx 56rpx;
+  box-sizing: border-box;
+}
+
+.hero-kicker {
+  text-align: center;
+  font-size: 22rpx;
+  color: #6b5e54;
+  letter-spacing: 8rpx;
+  margin-bottom: 44rpx;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+}
+
+.names {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 56rpx 0 20rpx;
+}
+
+.person {
+  width: 300rpx;
+  text-align: center;
+}
+
+.person text {
+  display: block;
+}
+
+.role {
+  font-size: 22rpx;
+  color: #8b8178;
+  margin-bottom: 14rpx;
+}
+
+.name {
+  font-size: 46rpx;
+  color: #2c2c2c;
+  line-height: 1.2;
+}
+
+.roman {
+  font-size: 20rpx;
+  color: #6b5e54;
+  letter-spacing: 5rpx;
+  margin-top: 10rpx;
+}
+
+.tag {
+  font-size: 26rpx;
+  color: #a85d50;
+  font-style: italic;
+  margin-top: 18rpx;
+}
+
+.amp {
+  width: 60rpx;
+  padding-top: 78rpx;
+  text-align: center;
+  color: #a85d50;
+  font-size: 34rpx;
+  font-style: italic;
+}
+
+.section {
+  padding: 72rpx 44rpx;
+}
+
+.section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.script {
+  color: #a85d50;
+  font-size: 30rpx;
+  font-style: italic;
+}
+
+.cn {
+  color: #4d4741;
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}
+
+.date-card,
+.venue-card {
+  background: rgba(255, 255, 255, 0.64);
+  border: 1rpx solid rgba(107, 94, 84, 0.14);
+  box-shadow: 0 16rpx 44rpx rgba(86, 72, 58, 0.08);
+}
+
+.date-card {
+  min-height: 172rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28rpx 28rpx;
+  box-sizing: border-box;
+}
+
+.date-side {
+  width: 132rpx;
+  text-align: center;
+  color: #6b5e54;
+  font-size: 24rpx;
+  line-height: 1.7;
+}
+
+.date-main {
+  text-align: center;
+  border-left: 1rpx solid rgba(107, 94, 84, 0.18);
+  border-right: 1rpx solid rgba(107, 94, 84, 0.18);
+  padding: 0 34rpx;
+}
+
+.date-main text {
+  display: block;
+}
+
+.date-number {
+  font-size: 64rpx;
+  line-height: 1;
+  color: #2c2c2c;
+}
+
+.date-en {
+  margin-top: 12rpx;
+  color: #6b5e54;
+  font-size: 20rpx;
+}
+
+.venue-section {
+  padding-top: 32rpx;
+}
+
+.venue-card {
+  padding: 44rpx 34rpx;
+  text-align: center;
+}
+
+.venue-card text {
+  display: block;
+}
+
+.venue-name {
+  font-size: 34rpx;
+  color: #2c2c2c;
+  margin-bottom: 14rpx;
+}
+
+.venue-sub {
+  font-size: 28rpx;
+  color: #6b5e54;
+  margin-bottom: 14rpx;
+}
+
+.venue-address {
+  font-size: 23rpx;
+  color: #8b8178;
+  margin-bottom: 34rpx;
+}
+
+.map-button,
+.share-button {
+  height: 76rpx;
+  line-height: 76rpx;
+  border-radius: 0;
+  border: 0;
+  color: #fff;
+  background: #6b4e31;
+  font-size: 24rpx;
+  letter-spacing: 4rpx;
+}
+
+.map-button::after,
+.share-button::after {
+  border: 0;
+}
+
+.photo-block {
+  padding: 20rpx 40rpx 36rpx;
+}
+
+.wide-photo {
+  display: block;
+  width: 100%;
+}
+
+.quote {
+  padding: 52rpx 64rpx 62rpx;
+  text-align: center;
+  color: #2c2c2c;
+  font-size: 31rpx;
+  line-height: 2;
+}
+
+.quote text {
+  display: block;
+}
+
+.quote-en {
+  color: #6b5e54;
+  font-size: 22rpx;
+  line-height: 1.7;
+  margin-top: 20rpx;
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.timeline-item {
+  width: 31%;
+  text-align: center;
+}
+
+.timeline-item text {
+  display: block;
+}
+
+.timeline-title {
+  color: #2c2c2c;
+  font-size: 25rpx;
+}
+
+.timeline-en {
+  color: #8b8178;
+  font-size: 18rpx;
+  min-height: 48rpx;
+  margin-top: 8rpx;
+}
+
+.timeline-dot {
+  color: #a85d50;
+  font-size: 34rpx;
+  margin: 16rpx 0;
+}
+
+.timeline-time {
+  color: #2c2c2c;
+  font-size: 23rpx;
+}
+
+.closing {
+  padding-top: 0;
+}
+
+.footer {
+  padding: 64rpx 54rpx 96rpx;
+  text-align: center;
+}
+
+.footer text {
+  display: block;
+}
+
+.footer-title {
+  color: #2c2c2c;
+  font-size: 34rpx;
+  margin-bottom: 16rpx;
+}
+
+.footer-desc {
+  color: #6b5e54;
+  font-size: 24rpx;
+  margin-bottom: 38rpx;
 }
