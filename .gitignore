@@ -18,6 +18,10 @@ public/select.html
 public/assets/_select/
 public/assets/素材清单.md
 
+# Local verification artifacts
+.playwright-cli/
+output/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
